@@ -1,7 +1,7 @@
-int main (int argc, char const *argv[]){
+int main (){
 
 
-printf("Olá Mundo");
+printf("Test 01");
 
 return 0;
 
