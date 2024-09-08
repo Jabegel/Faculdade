@@ -6,21 +6,21 @@ int main () {
 setlocale(LC_ALL,"Portuguese_Brazil");
 
 int numero, digito;
-int soma = 0; // Variavel para armazenar a soma dos cubos dos dígitos
+int soma = 0; // Variavel para armazenar a soma dos cubos dos dÃ­gitos
 
-//Solicita ao usúario que insira um números
-printf("Digite um número inteiro:");
+//Solicita ao usï¿½ario que insira um nï¿½meros
+printf("Digite um nï¿½mero inteiro:");
 scanf("%d",&numero);
 
-//Executa o loop para calcular a soma dos cubos dos dígitos
+//Executa o loop para calcular a soma dos cubos dos dÃ­gitos
 do{
-    digito = numero % 10; // Extrai o último digito do número
-    soma += digito * digito * digito; // Calcula o cubo do dígito e adiciona à soma
-    numero /= 10; // Remove o últimmo dígito do número
-} while (numero > 0); // Continua enquanto o número for maior que 10
+    digito = numero % 10; // Extrai o ï¿½ltimo digito do nï¿½mero
+    soma += digito * digito * digito; // Calcula o cubo do dï¿½gito e adiciona ï¿½ soma
+    numero /= 10; // Remove o ï¿½ltimmo dï¿½gito do nï¿½mero
+} while (numero > 0); // Continua enquanto o nï¿½mero for maior que 10
 
 // Exibe o resultado
-printf("A soma dos cubos dos dígitos é: %d\n", soma);
+printf("A soma dos cubos dos dï¿½gitos ï¿½: %d\n", soma);
 
 return 0;
 
