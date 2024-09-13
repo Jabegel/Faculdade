@@ -1,5 +1,5 @@
 /*
-
+que leia 5 números inteiros e armazene-os em um vetor. Em seguida, calcule e imprema a soma dos elementos desse vetor.
 */
 
 
