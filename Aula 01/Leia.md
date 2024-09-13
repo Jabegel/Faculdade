@@ -1,0 +1,1 @@
+A Aula 01 não tem exercício pule para a próxima.
