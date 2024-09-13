@@ -2,6 +2,7 @@
     "C_Cpp.default.compilerPath": "C:\\MinGW\\bin\\gcc.exe",
     "files.associations": {
         ".C": "cpp",
-        "random": "c"
+        "random": "c",
+        "stdio.h": "c"
     }
 }
