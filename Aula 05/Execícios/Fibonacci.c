@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-//Escreva um programa que leia um número inteiro positivo N e utilize um loop for para imprimir os primeiros N números da sequência de Fibonacci.
+//Escreva um programa que leia um nï¿½mero inteiro positivo N e utilize um loop for para imprimir os primeiros N nï¿½meros da sequï¿½ncia de Fibonacci.
 
 int main () {
 
@@ -9,12 +9,12 @@ setlocale(LC_ALL,"Portuguese_Brazil");
 
 int x, y=1, z=1, aux;
 
-printf("Digite um número inteiro positivo N:");
+printf("Digite um numero inteiro positivo N:");
 scanf("%d",&x);
 
 if(x<=0){
 
-    printf("Número digitado inválido");
+    printf("Numero digitado invalido");
 
 } else{ 
     
