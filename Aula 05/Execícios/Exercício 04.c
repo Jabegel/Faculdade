@@ -3,19 +3,27 @@
 e use um loop for para calcular o fatorial desse número.
 */
 
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
+    int numero;
+    int fatorial = 1; 
 
-    int N;
+    
+    printf("Digite um número inteiro positivo: ");
+    scanf("%d", &numero);
 
-    printf("Digite seu numero:");
-    scanf("%d", &N);
 
-    if(N < 0){
-        printf("Numero Invalido");
-    } else
+    if (numero < 0) {
+        printf("Por favor, digite um número positivo.\n");
+    } else {
+        
+        for (int i = 1; i <= numero; i++) {
+            fatorial *= i;
+        }
 
+        printf("Fatorial de %d = %d\n", numero, fatorial);
+    }
 
     return 0;
 }

@@ -1,0 +1,1 @@
+A Aula 02 não tem exercício de C pule para a próxima.
