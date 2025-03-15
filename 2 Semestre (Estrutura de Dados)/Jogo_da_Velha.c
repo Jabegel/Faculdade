@@ -46,57 +46,43 @@ int velha() {
 int main() {
     int linha, coluna;
     char jogador = 'X';
-    
+
     printf("Digite o nome do jogador que usara X: ");
     scanf("%s", jogadorX);
     printf("Digite o nome do jogador que usara O: ");
     scanf("%s", jogadorO);
-    
+
     abrirTabuleiro();
-    
+
     int jogoEmAndamento = 1;
 
     while (jogoEmAndamento) {
         exibirTabuleiro();
 
-        // Verificando quem é o jogador atual
-        if (jogador == 'X') {
-            printf("Jogador %c (%s), digite linha e coluna (0-2): ", jogador, jogadorX);
-        } else {
-            printf("Jogador %c (%s), digite linha e coluna (0-2): ", jogador, jogadorO);
-        }
+        do {
+            printf("Jogador %c (%s), digite linha e coluna (0-2): ", jogador, jogador == 'X' ? jogadorX : jogadorO);
+            scanf("%d %d", &linha, &coluna);
 
-        scanf("%d %d", &linha, &coluna);
-        
-        if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2 || tabuleiro[linha][coluna] != ' ') {
-            printf("Jogada inválida! Tente novamente.\n");
-            continue;
-        }
-        
+            if (linha < 0 || linha > 2 || coluna < 0 || coluna > 2 || tabuleiro[linha][coluna] != ' ') {
+                printf("Jogada invalida! Tente novamente.\n");
+            }
+        } while (linha < 0 || linha > 2 || coluna < 0 || coluna > 2 || tabuleiro[linha][coluna] != ' ');
+
         tabuleiro[linha][coluna] = jogador;
-        
+
         if (verificarVitoria(jogador)) {
             exibirTabuleiro();
-            if (jogador == 'X') {
-                printf("%s venceu!\n", jogadorX);
-            } else {
-                printf("%s venceu!\n", jogadorO);
-            }
-            jogoEmAndamento = 0;  // Termina o jogo
+            printf("%s venceu!\n", jogador == 'X' ? jogadorX : jogadorO);
+            jogoEmAndamento = 0;  
         }
-        
+
         if (velha()) {
             exibirTabuleiro();
             printf("Empate!\n");
-            jogoEmAndamento = 0;  // Termina o jogo
+            jogoEmAndamento = 0;  
         }
-        
-        // Alterando o jogador
-        if (jogador == 'X') {
-            jogador = 'O';
-        } else {
-            jogador = 'X';
-        }
+
+        jogador = (jogador == 'X') ? 'O' : 'X';
     }
 
     return 0;
