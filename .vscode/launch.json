@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Escola",
+      "request": "launch",
+      "mainClass": "N1_1.src.Escola",
+      "projectName": "Faculdade_63aacafe"
+    },
+    {
+      "type": "java",
+      "name": "Escola",
+      "request": "launch",
+      "mainClass": "N1.src.Escola",
+      "projectName": "Faculdade_63aacafe"
+    },
+    {
+      "type": "java",
       "name": "App",
       "request": "launch",
       "mainClass": "Aulas.src.App",
