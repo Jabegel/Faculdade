@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Empresa",
+      "request": "launch",
+      "mainClass": "N1_1.Empresas.src.Empresa",
+      "projectName": "Faculdade_63aacafe"
+    },
+    {
+      "type": "java",
       "name": "Escola",
       "request": "launch",
       "mainClass": "N1_1.src.Escola",
