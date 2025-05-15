@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .typing-effect {
+            font-size: 30px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid black;
+            animation: typing 4s steps(20) infinite, blink 1s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 52%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="typing-effect">Efeito de digitação! Com Javascript.</h1>
+</body>
+</html>

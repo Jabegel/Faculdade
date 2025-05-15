@@ -1,0 +1,44 @@
+.efeito1 {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.efeito1:hover {
+    opacity: 1;
+}
+
+.efeito2 {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .efeito2 {
+    transition: all 0.3s ease;
+  }
+  
+  .efeito2:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 105, 180, 0.5); /* Hot pink overlay */
+    z-index: 1;
+  }
+
+  .efeito3 {
+    transition: transform 0.3s ease-in-out;
+}
+
+.efeito3:hover {
+    transform: scale(1.1);
+}
+
+.efeito4 {
+    transition: transform 0.3s ease-in-out;
+}
+
+.efeito4:hover {
+    transform: rotate(15deg);
+}

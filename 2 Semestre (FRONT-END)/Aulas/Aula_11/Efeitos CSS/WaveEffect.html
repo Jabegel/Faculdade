@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .wave-effect {
+            font-size: 30px;
+            overflow: hidden;
+            position: relative;
+            animation-name: wave-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        .wave-effect span {
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            border: solid rgba(255, 255, 255, .5);
+            border-width: 10px;
+            animation-name: wave-span-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes wave-animation {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes wave-span-animation {
+            0% {
+                transform: scale(.5);
+            }
+
+            100% {
+                transform: scale(2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wave-effect">Wave effect!<span></span></div>
+
+</body>
+
+</html>
