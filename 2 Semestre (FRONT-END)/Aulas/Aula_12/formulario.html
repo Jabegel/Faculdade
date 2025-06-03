@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /*cor do fundo*/
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #91103a, #fff2ef);
+        }
+
+        /*ajustes da BOX do formulário*/
+
+        .box {
+            color: rgb(255, 255, 255);
+            /*cor do texto*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 15px;
+            width: 40%;
+        }
+
+        /*efeito da linha de borda do formulário*/
+
+        fieldset {
+            border: 3px solid #b4154a;
+        }
+
+        /*ajustes na legenda do formulário*/
+
+        legend {
+            border: 1px solid rgb(255, 255, 255);
+            padding: 10px;
+            text-align: center;
+            background-color: #b4154a;
+            border-radius: 8px;
+        }
+
+        /*efeito e posição das box*/
+
+        .inputBox {
+            position: relative;
+        }
+
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        /*efeitos das LABELs pra o nome subir, e pole valid não desce a legenda*/
+
+        .labelInput {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .inputUser:focus~.labelInput,
+        .inputUser:valid~.labelInput {
+            top: -20px;
+            font-size: 12px;
+            color: #fdf6f9;
+            /*Cor do texto que sobe */
+        }
+
+        /*ajustes data nascimento*/
+
+        #data_nascimento {
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        /*ajustes no botão enviar*/
+
+        #submit {
+            background-image: linear-gradient(to right, #91103a, #b4154a);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        /*efeito ao passar o mouse por cima, escurecer*/
+
+        #submit:hover {
+            background-image: linear-gradient(to right, #7a0e2f, #9b1240);
+            /* Cores um pouco mais escuras */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Criando uma BOX do formulário-->
+
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend><b>Fórmulário de Viagens</b></legend>
+                <br>
+
+                <!-- Criando Input pra Nome-->
+
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+
+                <!-- Criando Input pra E-mail-->
+
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+
+                <!-- Criando Input pra Telefone-->
+
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+
+                <!-- Menu de Opções -->
+                <p>
+                    <select name="curso" id="curso" class="selectCurso" required>
+                        <option value=""> -- Escolha uma opção -- </option>
+                        <option value="desenvolvimento_web"> Desenvolvimento Web</option>
+                        <option value="desing_grafico"> Desing Grafico </option>
+                        <option value="analise_dados"> Analise de Dados </option>
+                        <option value="marketing_digital"> Marketing Digital </option>
+                        <option value="seguranca_cibernetica"> Segurança Cibernetica </option>
+                    </select>
+                </p>
+
+                <!-- Criando Label pra seleção de genero-->
+
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required> <!-- checkbox -->
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" id="naoquero" name="genero" value="naoquero" required>
+                <label for="naoquero">Não Quero Informar</label>
+                <br><br>
+
+                <!-- Criando type DATE para nascimento-->
+
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+
+                <!-- Criando Input pra Cidade-->
+
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+                <br><br>
+
+                <!-- Criando Input pra Estado-->
+
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br><br>
+
+                <!-- Criando Input pra Endereço-->
+                <!--    
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+                <br><br>
+    -->
+                <!-- Criando type pra SUBMIT-->
+
+                <input type="submit" name="submit" id="submit">
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

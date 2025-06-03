@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        /* VARIÁVEIS CSS (PALETA DE CORES) - COPIADAS DO SEU OUTRO SITE */
+        :root {
+            --cor-fundo-claro: #fff2ef;
+            --cor-fundo-section: #fff;
+            --cor-fundo-card: #fdf6f9;
+
+            --cor-primaria: #b4154a;
+            /* Vermelho mais forte, botões de ação */
+            --cor-primaria-hover: #91103a;
+            /* Vermelho mais escuro no hover */
+
+            --cor-secundaria: #6d0033;
+            /* Roxo escuro, texto de menu, títulos de card */
+            --cor-terciaria: #b03a2e;
+            /* Marrom avermelhado, títulos de seção, linha do tempo */
+            --cor-quaternaria: #884ea0;
+            /* Roxo médio, títulos dentro da timeline */
+            --cor-quinto: #8c4b5f;
+            /* Roxo acinzentado, subtítulos, datas */
+
+            --cor-texto-principal: #4a2e3e;
+            /* Texto geral */
+            --cor-texto-destaque: #952215;
+            /* Frase final no "Sobre" */
+            --cor-texto-card-link: #5b2f4f;
+            /* Texto de parágrafos na timeline */
+
+            --cor-borda-clara: #f0e0d0;
+            /* Borda leve para cards e seções */
+
+            --shadow-leve: 0 2px 8px rgba(176, 58, 46, 0.15);
+            --shadow-media: 0 4px 14px rgba(0, 0, 0, 0.05);
+            --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-card-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --shadow-button: 0 4px 8px rgba(180, 21, 74, 0.4);
+            --shadow-button-hover: 0 6px 12px rgba(145, 16, 58, 0.6);
+            --shadow-timeline: 0 4px 20px rgba(176, 58, 46, 0.1);
+            --shadow-timeline-item-hover: 0 12px 30px rgba(176, 58, 46, 0.35);
+        }
+
+        /* Cor do fundo geral da página - Usando a cor de fundo claro do seu outro site */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--cor-fundo-claro);
+            color: var(--cor-texto-principal); /* Cor de texto padrão para o body */
+            margin: 0; /* Garante que não haja margem padrão no body */
+        }
+
+        /* Ajustes da BOX do formulário */
+        .box {
+            color: var(--cor-texto-principal);
+            /* Cor do texto principal do seu outro site */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Usando a cor de fundo de card e a sombra do seu outro site */
+            background-color: var(--cor-fundo-card); 
+            padding: 15px; /* Aumentei um pouco o padding para mais respiro */
+            border-radius: 15px; /* Ajustei o border-radius para ser mais consistente */
+            width: 40%; /* Aumentei a largura para telas maiores */
+            max-width: 500px; /* Garante que não fique muito largo em telas grandes */
+            box-shadow: var(--shadow-media); /* Sombra média do seu outro site */
+            border: 1px solid var(--cor-borda-clara); /* Borda clara do seu outro site */
+        }
+
+        /* Efeito da linha de borda do formulário */
+        fieldset {
+            border: 2px solid var(--cor-primaria); /* Usando a cor primária do seu outro site */
+            border-radius: 10px; /* Borda mais arredondada */
+            padding: 15px; /* Mais padding interno no fieldset */
+        }
+
+        /* Ajustes na legenda do formulário */
+        legend {
+            border: 1px solid var(--cor-primaria);
+            padding: 10px 15px; /* Ajustei o padding */
+            text-align: center;
+            background-color: var(--cor-primaria);
+            border-radius: 8px;
+            color: white; /* Mantém branco para contraste */
+            font-weight: 700; /* Negrito */
+            font-size: 1.2em; /* Um pouco maior */
+        }
+
+        /* Efeito e posição das box de input */
+        .inputBox {
+            position: relative;
+            margin-bottom: 25px; /* Mais espaço entre os inputs */
+        }
+
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid var(--cor-quinto); /* Usando uma cor mais discreta para a linha */
+            outline: none;
+            color: var(--cor-texto-principal); /* Cor do texto padrão */
+            font-size: 1rem; /* Usando rem para fonte */
+            width: 100%;
+            padding: 8px 0; /* Ajuste para melhor visual */
+            letter-spacing: 1px; /* Espaçamento de letra mais sutil */
+        }
+
+        /* Efeitos das LABELs */
+        .labelInput {
+            position: absolute;
+            top: 8px; /* Ajuste para o padding do inputUser */
+            left: 0px;
+            pointer-events: none;
+            transition: .3s ease-out; /* Transição mais suave */
+            color: var(--cor-quinto); /* Cor mais sutil para o label */
+            font-size: 1rem;
+        }
+
+        .inputUser:focus~.labelInput,
+        .inputUser:valid~.labelInput {
+            top: -12px; /* Ajuste para subir menos e não ficar tão longe */
+            font-size: 0.85rem; /* Um pouco menor */
+            color: var(--cor-primaria);
+            /* Cor primária quando o label sobe */
+        }
+        
+        /* Linha de foco nos inputs */
+        .inputUser:focus {
+            border-bottom: 2px solid var(--cor-primaria); /* Linha mais grossa e colorida ao focar */
+        }
+
+        /* Ajustes data nascimento */
+        #data_nascimento {
+            border: 1px solid var(--cor-borda-clara); /* Borda clara do outro site */
+            padding: 8px;
+            border-radius: 8px; /* Ajuste para consistência */
+            outline: none;
+            font-size: 1rem;
+            color: var(--cor-texto-principal); /* Cor do texto padrão */
+            background-color: var(--cor-fundo-section); /* Fundo de seção para este input */
+            width: calc(100% - 18px); /* Ajusta a largura para considerar o padding e borda */
+        }
+
+        /* Estilo para labels de rádio */
+        p {
+            color: var(--cor-texto-principal); /* Cor do texto padrão */
+            font-weight: 600; /* Levemente mais negrito */
+            margin-top: 20px; /* Espaço acima do "Sexo" */
+            margin-bottom: 10px;
+        }
+        
+        input[type="radio"] {
+            margin-right: 8px; /* Espaço entre o radio e o label */
+            accent-color: var(--cor-primaria); /* Muda a cor do radio button */
+        }
+
+        /* Ajustes no botão enviar */
+        #submit {
+            background-image: linear-gradient(to right, var(--cor-primaria-hover), var(--cor-primaria));
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 1.1rem; /* Um pouco maior */
+            font-weight: 700; /* Negrito */
+            cursor: pointer;
+            border-radius: 8px; /* Ajuste para consistência */
+            margin-top: 20px; /* Espaço acima do botão */
+            box-shadow: var(--shadow-button); /* Sombra do botão do outro site */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transições suaves */
+        }
+
+        /* Efeito ao passar o mouse por cima */
+        #submit:hover {
+            background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-primaria-hover));
+            box-shadow: var(--shadow-button-hover); /* Sombra de hover do outro site */
+            transform: translateY(-2px); /* Efeito de leve levantamento */
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .box {
+                width: 70%; /* Mais largura em tablets */
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .box {
+                width: 90%; /* Quase total em celulares */
+                padding: 15px;
+                transform: translate(-50%, -50%); /* Garante centralização vertical */
+                top: 50%; /* Mantém a posição central */
+            }
+            fieldset {
+                padding: 10px;
+            }
+            legend {
+                font-size: 1.1em;
+                padding: 8px 12px;
+            }
+            .inputUser {
+                font-size: 0.95rem;
+            }
+            .labelInput {
+                font-size: 0.95rem;
+                top: 6px;
+            }
+            .inputUser:focus~.labelInput,
+            .inputUser:valid~.labelInput {
+                font-size: 0.75rem;
+                top: -10px;
+            }
+            #data_nascimento {
+                font-size: 0.95rem;
+                padding: 7px;
+                width: calc(100% - 16px);
+            }
+            #submit {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend><b>Fórmulário de Viagens</b></legend>
+                <br>
+
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br>
+
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="inputUser" required> <label for="email" class="labelInput">Email</label>
+                </div>
+                <br>
+
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelInput">Telefone</label>
+                </div>
+
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                <br>
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                <br>
+                <input type="radio" id="naoquero" name="genero" value="naoquero" required>
+                <label for="naoquero">Não Quero Informar</label>
+                <br><br>
+
+                <label for="data_nascimento"><b>Data de Nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade" class="labelInput">Cidade</label>
+                </div>
+                <br>
+
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+                <br>
+
+                <input type="submit" name="submit" id="submit">
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
