@@ -130,9 +130,9 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 200px;
   height: 100vh;
-  background-color: #c7768e;
+  background-color: #c56b86c6;
   transform: translateX(100%);
   transition: transform 0.5s ease;
   padding: 80px 30px;
@@ -165,7 +165,6 @@ body {
   transform: translateX(10px);
 }
 
-
 /* ESTILO DO BOTÃO "QUERO VIAJAR" NO MENU */
 .menu a.quero-viajar {
     background-color: var(--cor-primaria);
@@ -173,6 +172,7 @@ body {
     padding: 10px 20px;
     font-weight: 700;
     box-shadow: var(--shadow-button);
+    border-radius: 15px; 
 }
 
 .menu a.quero-viajar:hover {
@@ -1090,4 +1090,48 @@ body {
     height: 60px;
     border-radius: 0 0 15px 15px;
     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-section {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  .timeline-section h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .timeline-intro {
+    font-size: 1rem;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .timeline {
+    border-left: 3px solid var(--cor-terciaria);
+    padding-left: 1rem;
+  }
+
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-content {
+    padding: 1rem;
+    background: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
