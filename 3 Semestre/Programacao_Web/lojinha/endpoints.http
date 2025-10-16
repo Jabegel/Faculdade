@@ -1,0 +1,192 @@
+###############################################
+# Produtos - métodos (array)
+###############################################
+
+### Lista produtos
+GET http://localhost:3000/produtos
+
+### 
+GET http://localhost:3000/nomes
+
+### 
+GET http://localhost:3000/disponiveis
+
+### 
+GET http://localhost:3000/indisponiveis
+
+### 
+GET http://localhost:3000/valor-total
+
+### 
+GET http://localhost:3000/buscar/notebook
+
+### 
+GET http://localhost:3000/buscar/mouse
+
+### 
+GET http://localhost:3000/buscar/teclado
+
+###############################################
+# Rotas
+###############################################
+
+### Saudação com nome
+GET http://localhost:3000/saudacao/Maria
+
+###
+GET http://localhost:3000/soma/15.5/8.3
+
+###
+GET http://localhost:3000/pesquisa?termo=nodejs&autor=maria
+
+###
+GET http://localhost:3000/pesquisa
+
+###
+GET http://localhost:3000/perfil/maria?idade=25&cidade=Tagua
+
+### 
+GET http://localhost:3000/perfil/carlos
+
+### 
+GET http://localhost:3000/perfil/ana?idade=30
+
+### 
+GET http://localhost:3000/ola
+
+### 
+GET http://localhost:3000/ola/ingles
+
+
+###############################################
+# Verbos
+###############################################
+
+### GET
+GET http://localhost:3000/produto
+
+### GET
+GET http://localhost:3000/produto/1
+
+###
+
+### POST
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+  "nome": "Notebook no preço",
+  "preco": 33500,
+  "estoque": 10
+}
+
+###
+
+### PUT
+PUT http://localhost:3000/produto/1
+Content-Type: application/json
+
+{
+  "nome": "Notebook no preço",
+  "preco": 31200,
+  "estoque": 8,
+  "categoria": "Informática"
+}
+
+###
+
+### PATCH
+PATCH http://localhost:3000/produto/1
+Content-Type: application/json
+
+{
+  "preco": 32100
+}
+
+### PATCH
+PATCH http://localhost:3000/produto/3
+Content-Type: application/json
+
+{
+  "nome": "Mouse ratinho",
+  "preco": 180
+}
+
+###
+
+### DELETE
+DELETE http://localhost:3000/produto/1
+
+### DELETE
+DELETE http://localhost:3000/produto/99
+
+
+###############################################
+# Array CRUDL
+###############################################
+
+
+### LIST
+GET http://localhost:3000/produtos
+
+###
+
+### READ
+GET http://localhost:3000/produtos/1
+
+### READ
+GET http://localhost:3000/produtos/999
+
+###
+
+### CREATE
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+{
+  "nome": "SSD 500GB",
+  "preco": 650,
+  "emEstoque": true
+}
+
+###
+
+### UPDATE
+PUT http://localhost:3000/produtos/1
+Content-Type: application/json
+
+{
+  "nome": "Notebook Dell Atualizado",
+  "preco": 3200,
+  "emEstoque": false
+}
+
+###
+
+### UPDATE PARCIAL (PATCH)
+PATCH http://localhost:3000/produtos/4
+Content-Type: application/json
+
+{
+  "emEstoque": true
+}
+
+### UPDATE PARCIAL (PATCH) - Atualizar nome e preço (ID: 5)
+PATCH http://localhost:3000/produtos/5
+Content-Type: application/json
+
+{
+  "nome": "Webcam Full HD",
+  "preco": 320
+}
+
+###
+
+### DELETE
+DELETE http://localhost:3000/produtos/1
+
+### DELETE
+DELETE http://localhost:3000/produtos/4
+
+### DELETE - erro 404
+DELETE http://localhost:3000/produtos/9999
